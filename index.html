@@ -1,400 +1,1052 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Adamia — Maison de design web</title>
-    <meta name="description" content="Adamia — Maison de design web. Discutons de votre projet.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        :root {
-            --bg: #050505;
-            --text: #fafafa;
-            --text-secondary: #a1a1a1;
-            --text-dim: #505050;
-            --whatsapp: #25D366;
-        }
+  <!-- SEO -->
+  <title>ABSE – Vallet Frères | Spécialiste du second œuvre depuis 1994</title>
+  <meta name="description" content="ABSE – Vallet Frères, entreprise de second œuvre implantée à Livron-sur-Drôme. Cloisons, faux plafonds, peinture, menuiserie, sols et agencement. Certifiée Qualibat et RGE. Sud-Est de la France." />
+  <meta name="keywords" content="second œuvre, cloison, faux plafond, menuiserie, revêtement sol, peinture, agencement, Drôme, Sud-Est France, Qualibat, RGE, Livron-sur-Drôme" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.abse.fr/" />
 
-        html, body {
-            height: 100%;
-            overflow: hidden;
-        }
+  <!-- Open Graph -->
+  <meta property="og:title" content="ABSE – Vallet Frères | Second œuvre depuis 1994" />
+  <meta property="og:description" content="Spécialiste du second œuvre dans le Sud-Est de la France. Certification Qualibat et RGE. Une seule entreprise, tous les lots finitions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.abse.fr/" />
 
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Helvetica Neue', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100dvh;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            position: relative;
-        }
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ABSE – Vallet Frères",
+    "description": "Spécialiste du second œuvre depuis 1994 — cloisons, faux plafonds, peinture, menuiserie, revêtements de sol et agencement dans le Sud-Est de la France.",
+    "url": "https://www.abse.fr",
+    "telephone": "+33475613815",
+    "email": "contact@abse.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Z.A de la Fauchetière, 7 rue des Frères Lumière",
+      "addressLocality": "Livron-sur-Drôme",
+      "postalCode": "26250",
+      "addressCountry": "FR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "44.7731",
+      "longitude": "4.8450"
+    },
+    "areaServed": "Sud-Est de la France",
+    "foundingDate": "1994",
+    "hasCredential": ["Qualibat", "RGE"]
+  }
+  </script>
 
-        /* ============================================
-           AMBIENT BACKGROUND
-           ============================================ */
-        .bg-glow {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-        .bg-glow::before {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            top: 35%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: radial-gradient(circle, rgba(37, 211, 102, 0.07) 0%, rgba(37, 211, 102, 0.02) 40%, transparent 65%);
-            border-radius: 50%;
-            animation: breathe 7s ease-in-out infinite;
-        }
+  <style>
+    :root {
+      --navy:       #1B3A5C;
+      --navy-dark:  #122840;
+      --navy-light: #2A5080;
+      --orange:     #E8711A;
+      --orange-dark:#C55C10;
+      --white:      #FFFFFF;
+      --off-white:  #F7F7F5;
+      --gray-100:   #EEEEEB;
+      --gray-300:   #CCCCCA;
+      --gray-500:   #888884;
+      --gray-700:   #555550;
+      --text:       #2C2C2C;
+      --font-head: 'Newsreader', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --nav-h: 72px;
+      --section-pad: 6rem 0;
+      --container: 1200px;
+      --radius: 2px;
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+    }
 
-        .bg-glow::after {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            top: 25%;
-            left: 55%;
-            transform: translate(-50%, -50%);
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.02) 0%, transparent 60%);
-            border-radius: 50%;
-            animation: breathe 9s ease-in-out 2s infinite;
-        }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: var(--font-body); }
+    ul { list-style: none; }
 
-        @keyframes breathe {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
-        }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
 
-        /* Grain */
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            opacity: 0.02;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-            background-size: 128px 128px;
-            pointer-events: none;
-            z-index: 0;
-        }
+    .container {
+      width: 100%;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
 
-        /* ============================================
-           SVG FILTERS FOR LIQUID GLASS
-           ============================================ */
-        .svg-filters {
-            position: absolute;
-            width: 0;
-            height: 0;
-            overflow: hidden;
-        }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-6 { transition-delay: 0.6s; }
 
-        /* ============================================
-           LAYOUT
-           ============================================ */
-        .container {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem;
-            text-align: center;
-            max-width: 480px;
-        }
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100; height: var(--nav-h);
+      display: flex; align-items: center;
+      transition: background 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+    }
+    .nav.scrolled { background: var(--white); box-shadow: 0 1px 0 var(--gray-100); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    .nav-logo { display: flex; flex-direction: column; gap: 1px; }
+    .nav-logo-name { font-family: var(--font-head); font-size: 1.25rem; font-weight: 600; letter-spacing: 0.05em; color: var(--white); transition: color 0.4s; line-height: 1; }
+    .nav-logo-sub { font-size: 0.65rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.65); transition: color 0.4s; }
+    .nav.scrolled .nav-logo-name { color: var(--navy); }
+    .nav.scrolled .nav-logo-sub { color: var(--gray-500); }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.85); transition: color 0.25s; position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1px; background: var(--orange); transition: width 0.25s var(--ease-out); }
+    .nav-link:hover { color: var(--white); }
+    .nav-link:hover::after { width: 100%; }
+    .nav.scrolled .nav-link { color: var(--gray-700); }
+    .nav.scrolled .nav-link:hover { color: var(--navy); }
+    .nav-cta { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.65rem 1.5rem; background: var(--orange); color: var(--white); border-radius: var(--radius); transition: background 0.25s, transform 0.25s; }
+    .nav-cta:hover { background: var(--orange-dark); transform: translateY(-1px); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 6px; cursor: pointer; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--white); transition: background 0.4s, transform 0.3s; }
+    .nav.scrolled .nav-toggle span { background: var(--navy); }
 
-        /* Logo */
-        .logo {
-            width: 88px;
-            height: 88px;
-            border-radius: 22px;
-            overflow: hidden;
-            margin-bottom: 2.8rem;
-            opacity: 0;
-            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
-            box-shadow: 
-                0 0 0 0.5px rgba(255, 255, 255, 0.06),
-                0 4px 20px rgba(0, 0, 0, 0.5);
-        }
+    /* HERO */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: flex-end; padding-bottom: 6rem; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=80&auto=format&fit=crop'); background-size: cover; background-position: center; transform: scale(1.05); transition: transform 8s ease-out; }
+    .hero-bg.loaded { transform: scale(1); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,22,40,0.92) 0%, rgba(10,22,40,0.55) 50%, rgba(10,22,40,0.25) 100%); }
+    .hero-content { position: relative; z-index: 2; max-width: 820px; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); margin-bottom: 1.5rem; }
+    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--orange); }
+    .hero-title { font-family: var(--font-head); font-size: clamp(2.4rem, 5vw, 4.5rem); font-weight: 500; line-height: 1.12; color: var(--white); letter-spacing: -0.02em; margin-bottom: 1.75rem; }
+    .hero-title em { font-style: italic; color: rgba(255,255,255,0.8); }
+    .hero-lead { font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,0.75); max-width: 580px; margin-bottom: 2.5rem; }
+    .hero-actions { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem 2rem; background: var(--orange); color: var(--white); border-radius: var(--radius); transition: background 0.25s, transform 0.25s, box-shadow 0.25s; }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,113,26,0.35); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px; transition: color 0.25s, border-color 0.25s; }
+    .btn-ghost:hover { color: var(--white); border-color: var(--white); }
+    .hero-scroll { position: absolute; bottom: 2rem; right: 2rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); }
 
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    /* SECTION HEADERS */
+    .section-label { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--orange); margin-bottom: 1rem; }
+    .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--orange); }
+    .section-title { font-family: var(--font-head); font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 500; line-height: 1.18; color: var(--navy); letter-spacing: -0.02em; }
+    .section-title em { font-style: italic; color: var(--gray-700); }
+    .section-lead { font-size: 1rem; line-height: 1.75; color: var(--gray-700); max-width: 560px; }
 
-        /* Heading */
-        .heading {
-            font-size: clamp(2.4rem, 8vw, 3.6rem);
-            font-weight: 600;
-            letter-spacing: -0.035em;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
-        }
+    /* EXPERTISE BAND */
+    .expertise-band { background: var(--navy); padding: 1.5rem 0; overflow: hidden; }
+    .expertise-band-inner { display: flex; align-items: center; gap: 0; white-space: nowrap; }
+    .expertise-item { display: inline-flex; align-items: center; gap: 1rem; padding: 0 2rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.65); flex-shrink: 0; }
+    .expertise-item-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
 
-        .heading span {
-            background: linear-gradient(160deg, #ffffff 0%, #a0a0a0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    /* VALUE */
+    .value { padding: var(--section-pad); background: var(--white); }
+    .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .value-image { position: relative; aspect-ratio: 4/5; overflow: hidden; border-radius: var(--radius); }
+    .value-image-badge { position: absolute; bottom: 2rem; left: 2rem; background: var(--orange); color: var(--white); padding: 1rem 1.5rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: var(--radius); z-index: 10; }
+    .value-content { display: flex; flex-direction: column; gap: 2rem; }
+    .value-header { display: flex; flex-direction: column; gap: 1rem; }
+    .value-text p { font-size: 1rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 1rem; }
+    .value-text p:last-child { margin-bottom: 0; }
+    .value-certs { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .cert-badge { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; border: 1px solid var(--gray-300); border-radius: var(--radius); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); transition: border-color 0.25s, background 0.25s; }
+    .cert-badge:hover { border-color: var(--navy); background: var(--off-white); }
+    .cert-badge svg { color: var(--orange); flex-shrink: 0; }
 
-        /* Subtitle */
-        .subtitle {
-            font-size: 1.1rem;
-            font-weight: 400;
-            color: var(--text-dim);
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            margin-bottom: 3.5rem;
-            opacity: 0;
-            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
-        }
+    /* ==========================================
+       CARROUSEL VIDÉO
+    ========================================== */
+    .video-carousel {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+    }
+    .video-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      pointer-events: none;
+    }
+    .video-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .video-slide video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+      background: rgba(0,0,0,0.45);
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.25s;
+    }
+    .carousel-btn:hover {
+      background: var(--orange);
+      transform: translateY(-50%) scale(1.08);
+    }
+    .carousel-btn-prev { left: 1rem; }
+    .carousel-btn-next { right: 1rem; }
+    .carousel-dots {
+      position: absolute;
+      bottom: 4.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 20;
+    }
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      cursor: pointer;
+      border: none;
+      transition: background 0.25s, transform 0.25s;
+      padding: 0;
+    }
+    .carousel-dot.active {
+      background: var(--white);
+      transform: scale(1.25);
+    }
 
-        /* ============================================
-           TRUE LIQUID GLASS BUTTON
-           ============================================ */
-        .glass-wrapper {
-            opacity: 0;
-            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
-        }
+    /* STATS */
+    .stats { padding: 5rem 0; background: var(--off-white); border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100); }
+    .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
+    .stat-item { padding: 2.5rem 2rem; text-align: center; border-right: 1px solid var(--gray-300); transition: background 0.25s; }
+    .stat-item:last-child { border-right: none; }
+    .stat-item:hover { background: var(--white); }
+    .stat-number { font-family: var(--font-head); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 600; color: var(--navy); line-height: 1; margin-bottom: 0.4rem; letter-spacing: -0.03em; }
+    .stat-number .stat-suffix { font-size: 0.5em; font-weight: 400; vertical-align: super; }
+    .stat-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); }
 
-        .liquid-glass {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 1.15rem 2.8rem;
-            font-family: inherit;
-            font-size: 1.05rem;
-            font-weight: 500;
-            color: var(--text);
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            border-radius: 980px;
-            isolation: isolate;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    /* SERVICES */
+    .services { padding: var(--section-pad); background: var(--white); }
+    .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; gap: 2rem; flex-wrap: wrap; }
+    .services-intro { max-width: 480px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray-100); border: 1px solid var(--gray-100); }
+    .service-card { background: var(--white); padding: 3rem 2.5rem; display: flex; flex-direction: column; gap: 1.25rem; cursor: pointer; transition: background 0.25s; position: relative; overflow: hidden; }
+    .service-card::before { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--orange); transition: width 0.35s var(--ease-out); }
+    .service-card:hover { background: var(--off-white); }
+    .service-card:hover::before { width: 100%; }
+    .service-icon { width: 44px; height: 44px; color: var(--orange); }
+    .service-number { font-family: var(--font-head); font-size: 0.75rem; font-weight: 400; color: var(--gray-300); letter-spacing: 0.1em; }
+    .service-name { font-family: var(--font-head); font-size: 1.3rem; font-weight: 600; color: var(--navy); line-height: 1.25; }
+    .service-desc { font-size: 0.88rem; line-height: 1.7; color: var(--gray-700); }
+    .service-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); margin-top: auto; transition: gap 0.25s; }
+    .service-link:hover { gap: 0.7rem; color: var(--orange); }
+    .service-link svg { transition: transform 0.25s; }
+    .service-link:hover svg { transform: translateX(3px); }
 
-            /* The glass itself */
-            background: linear-gradient(
-                135deg,
-                rgba(255, 255, 255, 0.12) 0%,
-                rgba(255, 255, 255, 0.05) 50%,
-                rgba(255, 255, 255, 0.08) 100%
-            );
-            backdrop-filter: blur(40px) saturate(180%) brightness(1.1);
-            -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.1);
+    /* PORTFOLIO */
+    .portfolio { padding: var(--section-pad); background: var(--navy-dark); }
+    .portfolio-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; gap: 2rem; flex-wrap: wrap; }
+    .portfolio-header .section-title { color: var(--white); }
+    .portfolio-header .section-label::before { background: var(--orange); }
+    .portfolio-link-all { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 2px; transition: color 0.25s, border-color 0.25s; }
+    .portfolio-link-all:hover { color: var(--white); border-color: var(--white); }
+    .portfolio-grid { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: auto auto; gap: 1px; background: rgba(255,255,255,0.08); }
+    .project-card { position: relative; overflow: hidden; cursor: pointer; }
+    .project-card:first-child { grid-row: 1 / 3; }
+    .project-card-img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; display: block; transition: transform 0.6s var(--ease-out), filter 0.4s; filter: brightness(0.75); }
+    .project-card:hover .project-card-img { transform: scale(1.05); filter: brightness(0.6); }
+    .project-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,22,40,0.9) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem; }
+    .project-card:first-child .project-card-overlay { padding: 3rem; }
+    .project-category { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.5rem; }
+    .project-name { font-family: var(--font-head); font-weight: 500; color: var(--white); line-height: 1.25; }
+    .project-card:first-child .project-name { font-size: 1.6rem; }
+    .project-card:not(:first-child) .project-name { font-size: 1.1rem; }
+    .project-location { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-top: 0.25rem; }
+    .project-arrow { position: absolute; top: 1.5rem; right: 1.5rem; width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(0.8); transition: opacity 0.25s, transform 0.25s, background 0.25s; }
+    .project-card:hover .project-arrow { opacity: 1; transform: scale(1); background: var(--orange); border-color: var(--orange); }
 
-            /* Multi-layer glass border system */
-            box-shadow:
-                /* Outer glow */
-                0 0 0 0.5px rgba(255, 255, 255, 0.18),
-                /* Top specular edge (light hitting the top of the glass) */
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.3),
-                /* Bottom inner shadow (glass thickness) */
-                inset 0 -1px 0 0 rgba(255, 255, 255, 0.06),
-                /* Left specular edge */
-                inset 1px 0 0 0 rgba(255, 255, 255, 0.1),
-                /* Right specular edge */
-                inset -1px 0 0 0 rgba(255, 255, 255, 0.1),
-                /* Inner depth glow */
-                inset 0 0 20px rgba(255, 255, 255, 0.03),
-                /* Drop shadow */
-                0 4px 12px rgba(0, 0, 0, 0.3),
-                0 12px 40px rgba(0, 0, 0, 0.15);
-        }
+    /* PROCESS */
+    .process { padding: var(--section-pad); background: var(--off-white); }
+    .process-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
+    .process-header { position: sticky; top: calc(var(--nav-h) + 2rem); }
+    .process-header .section-lead { margin-top: 1.25rem; }
+    .process-steps { display: flex; flex-direction: column; gap: 0; }
+    .process-step { display: grid; grid-template-columns: 3rem 1fr; gap: 2rem; padding: 2.5rem 0; border-bottom: 1px solid var(--gray-300); }
+    .process-step:first-child { border-top: 1px solid var(--gray-300); }
+    .process-step-num { font-family: var(--font-head); font-size: 1rem; font-weight: 500; color: var(--orange); padding-top: 0.1em; }
+    .process-step-title { font-family: var(--font-head); font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
+    .process-step-desc { font-size: 0.9rem; line-height: 1.7; color: var(--gray-700); }
 
-        /* Top specular arc — the key "liquid" refraction highlight */
-        .liquid-glass::before {
-            content: '';
-            position: absolute;
-            top: 1px;
-            left: 15%;
-            right: 15%;
-            height: 45%;
-            border-radius: 980px;
-            background: linear-gradient(
-                180deg,
-                rgba(255, 255, 255, 0.28) 0%,
-                rgba(255, 255, 255, 0.08) 40%,
-                rgba(255, 255, 255, 0.01) 70%,
-                transparent 100%
-            );
-            pointer-events: none;
-            z-index: 2;
-            transition: opacity 0.5s ease;
-        }
+    /* CTA BAND */
+    .cta-band { padding: 6rem 0; background: var(--navy); text-align: center; }
+    .cta-band .section-label { justify-content: center; }
+    .cta-band .section-label::before { display: none; }
+    .cta-band-title { font-family: var(--font-head); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 500; color: var(--white); letter-spacing: -0.02em; margin: 1rem 0 1.5rem; line-height: 1.18; }
+    .cta-band-subtitle { font-size: 1rem; color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .cta-band-actions { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+    .btn-outline-white { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem 2rem; border: 1px solid rgba(255,255,255,0.3); color: var(--white); border-radius: var(--radius); transition: border-color 0.25s, background 0.25s; }
+    .btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
 
-        /* Bottom caustic light — refracted light pooling at the bottom */
-        .liquid-glass::after {
-            content: '';
-            position: absolute;
-            bottom: 2px;
-            left: 20%;
-            right: 20%;
-            height: 30%;
-            border-radius: 980px;
-            background: linear-gradient(
-                0deg,
-                rgba(255, 255, 255, 0.06) 0%,
-                transparent 100%
-            );
-            pointer-events: none;
-            z-index: 2;
-            transition: opacity 0.5s ease;
-        }
+    /* CONTACT */
+    .contact { padding: var(--section-pad); background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 2.5rem; }
+    .contact-info-header { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-detail { display: flex; flex-direction: column; gap: 0.25rem; }
+    .contact-detail-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); }
+    .contact-detail-value { font-size: 0.95rem; line-height: 1.6; color: var(--text); }
+    .contact-detail-value a { color: var(--navy); transition: color 0.2s; }
+    .contact-detail-value a:hover { color: var(--orange); }
+    .contact-zone { padding: 1.5rem; background: var(--off-white); border-left: 2px solid var(--orange); font-size: 0.85rem; line-height: 1.65; color: var(--gray-700); }
+    .contact-zone strong { color: var(--navy); display: block; margin-bottom: 0.25rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-700); }
+    .form-input, .form-textarea, .form-select { width: 100%; padding: 0.85rem 1rem; border: 1px solid var(--gray-300); border-radius: var(--radius); font-family: var(--font-body); font-size: 0.9rem; color: var(--text); background: var(--white); transition: border-color 0.25s, box-shadow 0.25s; outline: none; appearance: none; }
+    .form-input:focus, .form-textarea:focus, .form-select:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(27,58,92,0.1); }
+    .form-textarea { resize: vertical; min-height: 130px; }
+    .form-submit { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem 2.5rem; background: var(--navy); color: var(--white); border-radius: var(--radius); transition: background 0.25s, transform 0.25s, box-shadow 0.25s; align-self: flex-start; cursor: pointer; border: none; font-family: var(--font-body); }
+    .form-submit:hover { background: var(--navy-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,58,92,0.25); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .form-success { display: none; padding: 1.25rem 1.5rem; background: #f0faf5; border: 1px solid #a3d9b8; border-radius: var(--radius); font-size: 0.9rem; color: #1a6b3a; font-weight: 500; }
 
-        /* Hover state */
-        .liquid-glass:hover {
-            transform: translateY(-3px) scale(1.03);
-            background: linear-gradient(
-                135deg,
-                rgba(255, 255, 255, 0.16) 0%,
-                rgba(255, 255, 255, 0.07) 50%,
-                rgba(255, 255, 255, 0.12) 100%
-            );
-            box-shadow:
-                0 0 0 0.5px rgba(255, 255, 255, 0.25),
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.4),
-                inset 0 -1px 0 0 rgba(255, 255, 255, 0.08),
-                inset 1px 0 0 0 rgba(255, 255, 255, 0.15),
-                inset -1px 0 0 0 rgba(255, 255, 255, 0.15),
-                inset 0 0 30px rgba(255, 255, 255, 0.05),
-                0 4px 16px rgba(0, 0, 0, 0.35),
-                0 16px 50px rgba(0, 0, 0, 0.2),
-                0 0 60px rgba(37, 211, 102, 0.06);
-        }
+    /* FOOTER */
+    .footer { background: #0C1F35; padding: 4rem 0 0; }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .footer-brand { display: flex; flex-direction: column; gap: 1.25rem; }
+    .footer-logo-name { font-family: var(--font-head); font-size: 1.4rem; font-weight: 600; color: var(--white); letter-spacing: 0.05em; }
+    .footer-logo-sub { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+    .footer-brand-desc { font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.45); }
+    .footer-col-title { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1.25rem; }
+    .footer-links { display: flex; flex-direction: column; gap: 0.75rem; }
+    .footer-link { font-size: 0.85rem; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .footer-link:hover { color: var(--white); }
+    .footer-contact-item { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 0.75rem; }
+    .footer-contact-item a { color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .footer-contact-item a:hover { color: var(--orange); }
+    .footer-certs { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem; }
+    .footer-cert { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; gap: 1rem; flex-wrap: wrap; }
+    .footer-legal { font-size: 0.75rem; color: rgba(255,255,255,0.25); line-height: 1.6; }
+    .footer-legal a { color: rgba(255,255,255,0.35); transition: color 0.2s; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.7); }
+    .footer-legal-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
 
-        .liquid-glass:hover::before {
-            background: linear-gradient(
-                180deg,
-                rgba(255, 255, 255, 0.35) 0%,
-                rgba(255, 255, 255, 0.1) 40%,
-                transparent 100%
-            );
-        }
+    /* MOBILE MENU */
+    .mobile-menu { display: none; position: fixed; inset: 0; z-index: 90; background: var(--navy-dark); flex-direction: column; padding: calc(var(--nav-h) + 2rem) 2rem 3rem; gap: 0; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-link { font-family: var(--font-head); font-size: 2rem; font-weight: 500; color: rgba(255,255,255,0.75); padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 0.2s; }
+    .mobile-menu-link:hover { color: var(--white); }
+    .mobile-menu-cta { margin-top: 2rem; }
 
-        .liquid-glass:active {
-            transform: translateY(0) scale(0.98);
-            transition-duration: 0.15s;
-            box-shadow:
-                0 0 0 0.5px rgba(255, 255, 255, 0.15),
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
-                inset 0 -1px 0 0 rgba(255, 255, 255, 0.04),
-                inset 0 0 15px rgba(255, 255, 255, 0.02),
-                0 2px 6px rgba(0, 0, 0, 0.3);
-        }
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .value-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .value-image { aspect-ratio: 16/9; }
+      .video-carousel { min-height: 300px; }
+      .stats-grid { grid-template-columns: repeat(3, 1fr); }
+      .stat-item:nth-child(3) { border-right: none; }
+      .stat-item:nth-child(4), .stat-item:nth-child(5) { border-top: 1px solid var(--gray-300); }
+      .stat-item:nth-child(5) { border-right: none; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .project-card:first-child { grid-row: auto; }
+      .process-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .process-header { position: static; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
 
-        /* Icon & text z-index */
-        .glass-icon {
-            width: 22px;
-            height: 22px;
-            flex-shrink: 0;
-            position: relative;
-            z-index: 3;
-            color: var(--whatsapp);
-            filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.5));
-        }
+    @media (max-width: 768px) {
+      :root { --section-pad: 3rem 0; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+      .services-header { flex-direction: column; align-items: flex-start; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-card { padding: 1.5rem; gap: 0.75rem; }
+      .service-icon { width: 32px; height: 32px; }
+      .service-number { display: none; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { padding: 1.5rem 1rem; }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(3) { border-top: 1px solid var(--gray-300); border-right: 1px solid var(--gray-300); }
+      .stat-item:nth-child(4) { border-top: 1px solid var(--gray-300); }
+      .stat-item:nth-child(5) { grid-column: 1 / -1; border-top: 1px solid var(--gray-300); border-right: none; }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-header { flex-direction: column; align-items: flex-start; }
+      .expertise-band-inner { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+      .expertise-band-inner::-webkit-scrollbar { display: none; }
+      .process-step { padding: 1.5rem 0; gap: 1rem; }
+      .value-image { aspect-ratio: 16/9; }
+      .cta-band { padding: 3.5rem 0; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .hero { padding-bottom: 4rem; }
+      .carousel-btn { width: 36px; height: 36px; }
+    }
 
-        .glass-label {
-            position: relative;
-            z-index: 3;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-        }
-
-        /* ============================================
-           FOOTER
-           ============================================ */
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 1.8rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            z-index: 1;
-            opacity: 0;
-            animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
-        }
-
-        .footer a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.7rem;
-            font-weight: 400;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
-        }
-
-        .footer a:hover { color: var(--text-secondary); }
-
-        .footer span {
-            color: #1a1a1a;
-            font-size: 0.7rem;
-        }
-
-        /* ============================================
-           ANIMATIONS
-           ============================================ */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+    @media (max-width: 480px) {
+      .hero-title { font-size: 1.9rem; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-card { padding: 1.25rem 1rem; }
+      .service-name { font-size: 0.95rem; }
+      .service-desc { display: none; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="bg-glow"></div>
 
+  <nav class="nav" id="mainNav" role="navigation" aria-label="Navigation principale">
     <div class="container">
-        <div class="logo">
-            <img src="data:image/webp;base64,UklGRqYDAABXRUJQVlA4IJoDAADQFgCdASqQAJAAPlEmkUWjoiGTaPSwOAUEtLduhTTLPX7vZBPrv+k4Vdgb8h+AJxBxAaSOY34rPqP2B/5Z/XP99/Xe07+1XspftESq4X7Y+oJqaitL1OT2S8Hm1fHH65Agehr7WQOwFpLqOutKBo6u1uqo/U3Lj+r7edhNTQLJu+wPYVi5BwNI9Dydw4l/ptHze8gyRz7gmSNjgEuQM8vaypw/fzcGm8d4l/yfM9hjkvYfEn9jdmygwSF+VC4VwAD+/TBV3jhGiDD4nMAXbHP1w6v+CSQs3xOHdEU79qEcUrAbFfP2y6m9/i+OiPFAVkCSCdQVODj7xgZaj1/LeEajA31W7kt9XEQ4aDxd8Hi6w7//RyphtFBUB+3q8bME/jzZDJxMg7hRLCddOvv78zooLoF0ECu3kNa1i9MSdHqRK65lnb6snZaGMY3H/j0HdKnK+I3UE8sz4fmIn91nL6R8RchUFot0zUKfQpsyxCNoAFBZKpu1uv5aU2YyJjWYyfWDr8iXhXk0MXQ6LZA/+/3Tp0tAueGmGNk+1PmfyS7gDU1fnXOOPhc9SV6/ccbNXlY86XLYnkqczZf9Tvyq0gN9Pfg1gCV1zl749XOzHIiU28qvFERrjNjB0S/DWNNvcnjDzTR1UFrO9/qxDVLGwu8MYR3rf0gpN01+j+4xriyanBlPtB3eqalHiM+prDG63R+zMzpB7uczGn/zBt/6b1U6u2P/M81XV97d4B+d11hPupXumUPFdwp3BYJ9JxT6NhmppnSXMotUdwQrF6HZlgcpEXKGHCHQf99Ef+LDNoz6T3NTT5AqoIAnDeJIQjZqQfoyecggoGcWKqe+onsHhFxOJlBTF9kfou//trfdb8fOLoT8YLZnzwuzlkBSLdUA8KmyIpeKnCbyTSBTVeqoPeT0ujEI8sH/VLOovPPHDs1DIfr/jfZm7KgtkFCpf+A5r73kXZgJAgVwd3b7vqiVrfiFtXJ5p6bTY2ELMSE8G0lm/aG0n/a6jnbaGisxW6gfuep045EGxFw0tdKvOwvt5Q3x3RfFWnIMpJNhW5nhfQ0u18EhTHprK33MhogY2PWAbbuZ7gPabXkN4pZOU+cgKdIyeQ8S9uJPgf91rg5nWM/ikvmssdaoCMg+9CKyh48wjwn334EvL1r7f8IPAS+XkI63O7hENtkVxsEqXVP3O1I8RyXNNwh6CRAhzz7tief0vv8dSok0t7wEAAAA" alt="Adamia" width="144" height="144">
-        </div>
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="ABSE – Vallet Frères, retour à l'accueil">
+          <span class="nav-logo-name">ABSE</span>
+          <span class="nav-logo-sub">Vallet Frères</span>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="societe.html" class="nav-link">La société</a></li>
+          <li><a href="activites.html" class="nav-link">Activités</a></li>
+          <li><a href="realisations.html" class="nav-link">Réalisations</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Nous contacter</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-        <h1 class="heading"><span>Discutons de votre projet</span></h1>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu mobile" aria-modal="true">
+    <a href="societe.html" class="mobile-menu-link">La société</a>
+    <a href="activites.html" class="mobile-menu-link">Activités</a>
+    <a href="realisations.html" class="mobile-menu-link">Réalisations</a>
+    <a href="contact.html" class="mobile-menu-link">Contact</a>
+    <div class="mobile-menu-cta">
+      <a href="contact.html" class="btn-primary">Demander un devis</a>
+    </div>
+  </div>
 
-        <p class="subtitle">Maison de design web</p>
+  <main>
 
-        <div class="glass-wrapper">
-            <a href="https://wa.me/33617605314?text=Bonjour%20je%20viens%20de%20TikTok" class="liquid-glass" target="_blank" rel="noopener">
-                <svg class="glass-icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-                <span class="glass-label">Discuter sur WhatsApp</span>
+    <!-- HERO -->
+    <section class="hero" aria-label="Présentation ABSE">
+      <div class="hero-bg" id="heroBg" role="img" aria-label="Chantier de second œuvre, travaux intérieurs"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-eyebrow">Depuis 1994 — Livron-sur-Drôme</p>
+          <h1 class="hero-title">
+            Votre expert<br>
+            <em>du second œuvre</em><br>
+            dans le Sud-Est
+          </h1>
+          <p class="hero-lead">
+            Cloisons, faux plafonds, menuiserie, peinture, revêtements de sol, agencement —
+            une seule entreprise pour l'intégralité de vos lots de second œuvre,
+            de la conception à la levée des réserves.
+          </p>
+          <div class="hero-actions">
+            <a href="realisations.html" class="btn-primary">
+              Voir nos réalisations
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
             </a>
+            <a href="contact.html" class="btn-ghost">
+              Demander un devis
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </div>
         </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">Défiler</div>
+    </section>
+
+    <!-- EXPERTISE BAND -->
+    <div class="expertise-band" aria-label="Domaines d'activité">
+      <div class="container">
+        <div class="expertise-band-inner">
+          <span class="expertise-item"><span class="expertise-item-dot" aria-hidden="true"></span>Cloisons & doublages</span>
+          <span class="expertise-item"><span class="expertise-item-dot" aria-hidden="true"></span>Faux plafonds</span>
+          <span class="expertise-item"><span class="expertise-item-dot" aria-hidden="true"></span>Peinture & revêtement mural</span>
+          <span class="expertise-item"><span class="expertise-item-dot" aria-hidden="true"></span>Menuiserie intérieure</span>
+          <span class="expertise-item"><span class="expertise-item-dot" aria-hidden="true"></span>Revêtement de sol</span>
+          <span class="expertise-item"><span class="expertise-item-dot" aria-hidden="true"></span>Agencement</span>
+          <span class="expertise-item"><span class="expertise-item-dot" aria-hidden="true"></span>Qualibat · RGE</span>
+        </div>
+      </div>
     </div>
 
-    <footer class="footer">
-        <a href="mailto:contact@adamia.fr">Contact</a>
-        <span>·</span>
-        <a href="#">© Adamia</a>
-    </footer>
+    <!-- VALUE PROPOSITION -->
+    <section class="value" aria-label="Notre proposition de valeur">
+      <div class="container">
+        <div class="value-grid">
+
+          <!-- CARROUSEL VIDÉO -->
+          <div class="value-image reveal">
+            <div class="video-carousel" id="videoCarousel">
+
+              <div class="video-slide active" data-index="0">
+                <video muted playsinline preload="metadata">
+                  <source src="https://res.cloudinary.com/dpmafqhif/video/upload/v1776850232/6474181-uhd_2160_3840_25fps_oho0dp.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <div class="video-slide" data-index="1">
+                <video muted playsinline preload="metadata">
+                  <source src="https://res.cloudinary.com/dpmafqhif/video/upload/v1776850313/6474189-uhd_2160_3840_25fps_hpgyjk.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <div class="video-slide" data-index="2">
+                <video muted playsinline preload="metadata">
+                  <source src="https://res.cloudinary.com/dpmafqhif/video/upload/v1776850339/6473926-uhd_2160_3840_25fps_c5thny.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <div class="video-slide" data-index="3">
+                <video muted playsinline preload="metadata">
+                  <source src="https://res.cloudinary.com/dpmafqhif/video/upload/v1776850077/18006080-uhd_2160_3840_60fps_rtdkdx.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Flèche gauche -->
+              <button class="carousel-btn carousel-btn-prev" id="carouselPrev" aria-label="Vidéo précédente">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+
+              <!-- Flèche droite -->
+              <button class="carousel-btn carousel-btn-next" id="carouselNext" aria-label="Vidéo suivante">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+
+              <!-- Points de navigation -->
+              <div class="carousel-dots" role="tablist" aria-label="Navigation vidéos">
+                <button class="carousel-dot active" data-goto="0" role="tab" aria-label="Vidéo 1" aria-selected="true"></button>
+                <button class="carousel-dot" data-goto="1" role="tab" aria-label="Vidéo 2" aria-selected="false"></button>
+                <button class="carousel-dot" data-goto="2" role="tab" aria-label="Vidéo 3" aria-selected="false"></button>
+                <button class="carousel-dot" data-goto="3" role="tab" aria-label="Vidéo 4" aria-selected="false"></button>
+              </div>
+
+            </div>
+            <div class="value-image-badge">Certification Qualibat</div>
+          </div>
+
+          <div class="value-content">
+            <div class="value-header reveal reveal-delay-1">
+              <p class="section-label">Notre engagement</p>
+              <h2 class="section-title">
+                Une seule entreprise,<br>
+                <em>tous les corps d'état</em>
+              </h2>
+            </div>
+            <div class="value-text reveal reveal-delay-2">
+              <p>
+                Depuis 30 ans, ABSE – Vallet Frères accompagne les maîtres d'ouvrage,
+                les maîtres d'œuvre et les contractants généraux dans l'intégralité
+                de leurs opérations de second œuvre. Implantés à Livron-sur-Drôme,
+                nous intervenons sur tout le Sud-Est de la France.
+              </p>
+              <p>
+                Notre force : une coordination technique interne qui vous évite
+                la gestion de multiples intervenants. De la cloison à l'agencement,
+                du plafond au sol — une seule interlocution, une seule responsabilité.
+              </p>
+            </div>
+            <div class="value-certs reveal reveal-delay-3">
+              <div class="cert-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Qualibat
+              </div>
+              <div class="cert-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                RGE
+              </div>
+              <div class="cert-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                Écolabel
+              </div>
+            </div>
+            <div class="reveal reveal-delay-4">
+              <a href="societe.html" class="btn-primary">
+                Découvrir la société
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" aria-label="Chiffres clés ABSE">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item reveal">
+            <div class="stat-number" data-count="30" data-suffix=" ans">
+              <span class="count-val">0</span><span class="stat-suffix"> ans</span>
+            </div>
+            <div class="stat-label">d'expérience</div>
+          </div>
+          <div class="stat-item reveal reveal-delay-1">
+            <div class="stat-number">1994</div>
+            <div class="stat-label">Année de fondation</div>
+          </div>
+          <div class="stat-item reveal reveal-delay-2">
+            <div class="stat-number">
+              <span class="count-val" data-count="6">0</span>
+            </div>
+            <div class="stat-label">Corps d'état</div>
+          </div>
+          <div class="stat-item reveal reveal-delay-3">
+            <div class="stat-number" style="font-size:clamp(1.2rem,2.5vw,1.8rem);padding-top:0.4rem">Qualibat<br>&amp; RGE</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+          <div class="stat-item reveal reveal-delay-4">
+            <div class="stat-number" style="font-size:clamp(1rem,2vw,1.6rem);padding-top:0.4rem">Sud-Est</div>
+            <div class="stat-label">Zone d'intervention</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" aria-label="Nos activités">
+      <div class="container">
+        <div class="services-header">
+          <div class="services-intro">
+            <p class="section-label reveal">Nos activités</p>
+            <h2 class="section-title reveal reveal-delay-1">
+              Six expertises,<br><em>un seul partenaire</em>
+            </h2>
+          </div>
+          <a href="activites.html" class="btn-primary reveal reveal-delay-2" style="align-self:flex-end">
+            Toutes nos activités
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </a>
+        </div>
+        <div class="services-grid" role="list">
+          <article class="service-card reveal" role="listitem">
+            <span class="service-number" aria-hidden="true">01</span>
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="9" x2="12" y2="9"/><line x1="12" y1="15" x2="21" y2="15"/></svg>
+            <h3 class="service-name">Cloison</h3>
+            <p class="service-desc">Grande hauteur, coupe-feu, acoustique. Placo, aluminium, verre, bois, PVC. Cloisons phoniques, thermiques, amovibles et coulissantes.</p>
+            <a href="activites.html#cloison" class="service-link" aria-label="En savoir plus sur nos cloisons">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+          </article>
+          <article class="service-card reveal reveal-delay-1" role="listitem">
+            <span class="service-number" aria-hidden="true">02</span>
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 5h18M3 5l3 14h12l3-14"/><line x1="8" y1="5" x2="8" y2="19"/><line x1="16" y1="5" x2="16" y2="19"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
+            <h3 class="service-name">Faux plafond</h3>
+            <p class="service-desc">Coupe-feu, acoustique, dalles minérales. Fibres minérales, métal, plâtre, bois. Intégration éclairage et absorption acoustique.</p>
+            <a href="activites.html#faux-plafond" class="service-link" aria-label="En savoir plus sur nos faux plafonds">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+          </article>
+          <article class="service-card reveal reveal-delay-2" role="listitem">
+            <span class="service-number" aria-hidden="true">03</span>
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M12 11v10"/><path d="M10 19h4"/><path d="M7 7h.01M12 7h.01M17 7h.01"/></svg>
+            <h3 class="service-name">Peinture & Revêtement mural</h3>
+            <p class="service-desc">Application soignée, produits Écolabel certifiés, finitions haute qualité. Toutes surfaces, intérieur et zones techniques.</p>
+            <a href="activites.html#peinture" class="service-link" aria-label="En savoir plus sur nos travaux de peinture">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+          </article>
+          <article class="service-card reveal reveal-delay-3" role="listitem">
+            <span class="service-number" aria-hidden="true">04</span>
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="8" height="18" rx="1"/><rect x="13" y="3" width="8" height="18" rx="1"/><line x1="11" y1="12" x2="13" y2="12"/><circle cx="9.5" cy="12" r="0.5" fill="currentColor"/><circle cx="14.5" cy="12" r="0.5" fill="currentColor"/></svg>
+            <h3 class="service-name">Menuiserie</h3>
+            <p class="service-desc">Blocs portes stratifiés, portes coupe-feu, menuiseries intérieures sur mesure. Conception et pose par nos équipes.</p>
+            <a href="activites.html#menuiserie" class="service-link" aria-label="En savoir plus sur nos menuiseries">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+          </article>
+          <article class="service-card reveal reveal-delay-4" role="listitem">
+            <span class="service-number" aria-hidden="true">05</span>
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="0.5"/><rect x="13" y="3" width="8" height="8" rx="0.5"/><rect x="3" y="13" width="8" height="8" rx="0.5"/><rect x="13" y="13" width="8" height="8" rx="0.5"/></svg>
+            <h3 class="service-name">Revêtement de sol</h3>
+            <p class="service-desc">Sols souples, industriels, carrelage, faïence. Toutes surfaces, tous types de locaux — bureaux, entrepôts, espaces commerciaux.</p>
+            <a href="activites.html#sol" class="service-link" aria-label="En savoir plus sur nos revêtements de sol">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+          </article>
+          <article class="service-card reveal reveal-delay-5" role="listitem">
+            <span class="service-number" aria-hidden="true">06</span>
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 7h3v6H7zM14 7h3v3h-3zM14 13h3v1h-3z"/></svg>
+            <h3 class="service-name">Agencement</h3>
+            <p class="service-desc">Du placard à la banque d'accueil. Cloisons aluminium laquées, vitrages, stores intégrés, cloisonnements sanitaires, mobilier sur mesure.</p>
+            <a href="activites.html#agencement" class="service-link" aria-label="En savoir plus sur nos prestations d'agencement">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio" aria-label="Sélection de réalisations">
+      <div class="container">
+        <div class="portfolio-header">
+          <div>
+            <p class="section-label">Réalisations</p>
+            <h2 class="section-title reveal">Des chantiers exigeants,<br><em>des résultats durables</em></h2>
+          </div>
+          <a href="realisations.html" class="portfolio-link-all reveal">Toutes nos réalisations <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+        </div>
+        <div class="portfolio-grid">
+          <article class="project-card reveal">
+            <img class="project-card-img" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1000&q=80&auto=format&fit=crop" alt="Base logistique Intermarché Donzère" loading="lazy" width="1000" height="600"/>
+            <div class="project-card-overlay"><p class="project-category">Logistique</p><h3 class="project-name">Base logistique Intermarché</h3><p class="project-location">Donzère (26) — Drôme</p></div>
+            <div class="project-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></div>
+          </article>
+          <article class="project-card reveal reveal-delay-1">
+            <img class="project-card-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format&fit=crop" alt="Prodeval Valence — 2800 m²" loading="lazy" width="800" height="500"/>
+            <div class="project-card-overlay"><p class="project-category">Industrie</p><h3 class="project-name">Prodeval — Biogaz</h3><p class="project-location">Valence (26) — 2 800 m²</p></div>
+            <div class="project-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></div>
+          </article>
+          <article class="project-card reveal reveal-delay-2">
+            <img class="project-card-img" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80&auto=format&fit=crop" alt="River Boat Saint-Paul-Trois-Châteaux" loading="lazy" width="800" height="500"/>
+            <div class="project-card-overlay"><p class="project-category">Bureaux & Tertiaire</p><h3 class="project-name">River Boat — HQE</h3><p class="project-location">Saint-Paul-Trois-Châteaux (26)</p></div>
+            <div class="project-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" aria-label="Notre approche">
+      <div class="container">
+        <div class="process-grid">
+          <div class="process-header">
+            <p class="section-label reveal">Notre approche</p>
+            <h2 class="section-title reveal reveal-delay-1">De la conception<br><em>à la levée des réserves</em></h2>
+            <p class="section-lead reveal reveal-delay-2">Chefs de chantier organisés, coordinateurs de projet expérimentés. ABSE garantit le respect des délais, des règles de l'art et la sécurité sur chaque chantier.</p>
+          </div>
+          <div class="process-steps">
+            <div class="process-step reveal"><span class="process-step-num" aria-hidden="true">01</span><div><h3 class="process-step-title">Analyse & chiffrage</h3><p class="process-step-desc">Étude technique des lots, visites de chantier, coordination avec le maître d'œuvre. Chiffrage transparent et délai de réponse rapide.</p></div></div>
+            <div class="process-step reveal reveal-delay-1"><span class="process-step-num" aria-hidden="true">02</span><div><h3 class="process-step-title">Planification & organisation</h3><p class="process-step-desc">Coordination technique interne entre tous les corps d'état. Planning détaillé respectant vos contraintes calendaires.</p></div></div>
+            <div class="process-step reveal reveal-delay-2"><span class="process-step-num" aria-hidden="true">03</span><div><h3 class="process-step-title">Exécution des travaux</h3><p class="process-step-desc">Équipes qualifiées, matériaux certifiés Écolabel, sécurité chantier irréprochable. Respect des normes acoustiques, coupe-feu et thermiques.</p></div></div>
+            <div class="process-step reveal reveal-delay-3"><span class="process-step-num" aria-hidden="true">04</span><div><h3 class="process-step-title">Réception & levée des réserves</h3><p class="process-step-desc">Traitement rigoureux des déchets, nettoyage de fin de chantier, accompagnement lors des visites de réception et levée des réserves.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band" aria-label="Appel à l'action">
+      <div class="container">
+        <p class="section-label reveal">Travaillons ensemble</p>
+        <h2 class="cta-band-title reveal reveal-delay-1">Un projet de second œuvre ?<br><em style="opacity:0.7">Parlez-nous en.</em></h2>
+        <p class="cta-band-subtitle reveal reveal-delay-2">Maîtres d'ouvrage, maîtres d'œuvre, contractants généraux — ABSE répond à vos appels d'offres et chiffre rapidement votre projet.</p>
+        <div class="cta-band-actions reveal reveal-delay-3">
+          <a href="contact.html" class="btn-primary">Demander un devis <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+          <a href="tel:+33475613815" class="btn-outline-white"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.85-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>04 75 61 38 15</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" aria-label="Formulaire de contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="contact-info-header">
+              <p class="section-label reveal">Contact</p>
+              <h2 class="section-title reveal reveal-delay-1">Parlons de<br><em>votre projet</em></h2>
+            </div>
+            <div class="reveal reveal-delay-2"><div class="contact-detail"><span class="contact-detail-label">Adresse</span><address class="contact-detail-value" style="font-style:normal">Z.A de la Fauchetière<br>7 rue des Frères Lumière<br>26250 Livron-sur-Drôme</address></div></div>
+            <div class="reveal reveal-delay-3"><div class="contact-detail"><span class="contact-detail-label">Téléphone</span><div class="contact-detail-value"><a href="tel:+33475613815">04 75 61 38 15</a></div></div></div>
+            <div class="reveal reveal-delay-4"><div class="contact-detail"><span class="contact-detail-label">Email</span><div class="contact-detail-value"><a href="mailto:contact@abse.fr">contact@abse.fr</a></div></div></div>
+            <div class="contact-zone reveal reveal-delay-5"><strong>Zone d'intervention</strong>Sud-Est de la France — Drôme (26), Ardèche (07), Vaucluse (84), Isère (38), Rhône (69), Bouches-du-Rhône (13) et départements limitrophes.</div>
+          </div>
+          <form class="contact-form reveal reveal-delay-1" id="contactForm" novalidate aria-label="Formulaire de demande de devis">
+            <div class="form-row">
+              <div class="form-group"><label class="form-label" for="firstName">Prénom *</label><input class="form-input" type="text" id="firstName" name="firstName" required autocomplete="given-name" placeholder="Jean"/></div>
+              <div class="form-group"><label class="form-label" for="lastName">Nom *</label><input class="form-input" type="text" id="lastName" name="lastName" required autocomplete="family-name" placeholder="Martin"/></div>
+            </div>
+            <div class="form-group"><label class="form-label" for="email">Email *</label><input class="form-input" type="email" id="email" name="email" required autocomplete="email" placeholder="jean.martin@entreprise.fr"/></div>
+            <div class="form-group"><label class="form-label" for="phone">Téléphone</label><input class="form-input" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="06 00 00 00 00"/></div>
+            <div class="form-group"><label class="form-label" for="company">Société</label><input class="form-input" type="text" id="company" name="company" autocomplete="organization" placeholder="Nom de votre entreprise"/></div>
+            <div class="form-group">
+              <label class="form-label" for="subject">Type de projet</label>
+              <select class="form-select" id="subject" name="subject">
+                <option value="">— Sélectionner —</option>
+                <option value="cloison">Cloisons & doublages</option>
+                <option value="plafond">Faux plafonds</option>
+                <option value="peinture">Peinture & revêtement mural</option>
+                <option value="menuiserie">Menuiserie intérieure</option>
+                <option value="sol">Revêtement de sol</option>
+                <option value="agencement">Agencement</option>
+                <option value="multi">Plusieurs lots (second œuvre complet)</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group"><label class="form-label" for="message">Votre projet *</label><textarea class="form-textarea" id="message" name="message" required placeholder="Décrivez votre projet : type de locaux, surface approximative, localisation, délais souhaités…"></textarea></div>
+            <div class="form-success" id="formSuccess" role="alert">Votre message a bien été envoyé. Nous vous répondrons dans les meilleurs délais.</div>
+            <button type="submit" class="form-submit" id="formSubmit">Envoyer ma demande <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div><div class="footer-logo-name">ABSE</div><div class="footer-logo-sub">Vallet Frères</div></div>
+          <p class="footer-brand-desc">Spécialiste du second œuvre depuis 1994. Implantés à Livron-sur-Drôme, nous intervenons sur tout le Sud-Est de la France pour vos chantiers de cloisons, plafonds, peinture, menuiserie, sols et agencement.</p>
+          <div class="footer-certs">
+            <span class="footer-cert"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Qualibat</span>
+            <span class="footer-cert"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Reconnu Garant de l'Environnement (RGE)</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Navigation</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="index.html" class="footer-link">Accueil</a></li>
+            <li><a href="societe.html" class="footer-link">La société</a></li>
+            <li><a href="activites.html" class="footer-link">Nos activités</a></li>
+            <li><a href="realisations.html" class="footer-link">Réalisations</a></li>
+            <li><a href="contact.html" class="footer-link">Contact & devis</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Activités</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="activites.html#cloison" class="footer-link">Cloisons</a></li>
+            <li><a href="activites.html#faux-plafond" class="footer-link">Faux plafonds</a></li>
+            <li><a href="activites.html#peinture" class="footer-link">Peinture</a></li>
+            <li><a href="activites.html#menuiserie" class="footer-link">Menuiserie</a></li>
+            <li><a href="activites.html#sol" class="footer-link">Revêtement de sol</a></li>
+            <li><a href="activites.html#agencement" class="footer-link">Agencement</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Contact</h3>
+          <div class="footer-contact-item">Z.A de la Fauchetière<br>7 rue des Frères Lumière<br>26250 Livron-sur-Drôme</div>
+          <div class="footer-contact-item"><a href="tel:+33475613815">04 75 61 38 15</a></div>
+          <div class="footer-contact-item">Fax : 04 75 61 00 01</div>
+          <div class="footer-contact-item"><a href="mailto:contact@abse.fr">contact@abse.fr</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">© 2025 ABSE – Vallet Frères. Tous droits réservés.<br>RCS : 409 162 823 00051 &nbsp;|&nbsp; TVA : FR 41 409 162 823<br>Directeur de publication : Gérald VALLET</div>
+        <div class="footer-legal-links">
+          <a href="#" class="footer-link" style="font-size:0.75rem;color:rgba(255,255,255,0.25)">Mentions légales</a>
+          <a href="#" class="footer-link" style="font-size:0.75rem;color:rgba(255,255,255,0.25)">Politique de confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // --- Nav scroll ---
+    const nav = document.getElementById('mainNav');
+    function updateNav() { nav.classList.toggle('scrolled', window.scrollY > 60); }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    // --- Mobile menu ---
+    const toggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    toggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+      toggle.setAttribute('aria-expanded', menuOpen);
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuOpen = false;
+        mobileMenu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+        document.body.style.overflow = '';
+      });
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuOpen) {
+        menuOpen = false;
+        mobileMenu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+        document.body.style.overflow = '';
+        toggle.focus();
+      }
+    });
+
+    // --- Hero bg ---
+    const heroBg = document.getElementById('heroBg');
+    if (heroBg) {
+      const img = new Image();
+      img.onload = () => heroBg.classList.add('loaded');
+      img.src = 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=80&auto=format&fit=crop';
+    }
+
+    // --- Scroll reveal ---
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // --- Counters ---
+    function animateCount(el) {
+      const target = parseInt(el.dataset.count, 10);
+      if (isNaN(target)) return;
+      const duration = 1800;
+      const start = performance.now();
+      function step(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.querySelector('.count-val').textContent = Math.round(eased * target);
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { animateCount(entry.target); counterObserver.unobserve(entry.target); } });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+    // --- Carrousel vidéo ---
+    (function() {
+      const slides = Array.from(document.querySelectorAll('.video-slide'));
+      const dots   = Array.from(document.querySelectorAll('.carousel-dot'));
+      let current  = 0;
+      let autoTimer = null;
+
+      function showSlide(idx) {
+        // Masquer l'ancien
+        slides[current].classList.remove('active');
+        slides[current].querySelector('video').pause();
+        dots[current].classList.remove('active');
+        dots[current].setAttribute('aria-selected', 'false');
+
+        // Afficher le nouveau
+        current = (idx + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+        dots[current].setAttribute('aria-selected', 'true');
+
+        const vid = slides[current].querySelector('video');
+        vid.currentTime = 0;
+        vid.play().catch(() => {});
+      }
+
+      function startAuto() {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(() => showSlide(current + 1), 8000);
+      }
+
+      // Passage auto à la fin de chaque vidéo
+      slides.forEach((slide, i) => {
+        slide.querySelector('video').addEventListener('ended', () => {
+          clearInterval(autoTimer);
+          showSlide(i + 1);
+          startAuto();
+        });
+      });
+
+      // Flèches
+      document.getElementById('carouselPrev').addEventListener('click', () => {
+        clearInterval(autoTimer);
+        showSlide(current - 1);
+        startAuto();
+      });
+      document.getElementById('carouselNext').addEventListener('click', () => {
+        clearInterval(autoTimer);
+        showSlide(current + 1);
+        startAuto();
+      });
+
+      // Points
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          clearInterval(autoTimer);
+          showSlide(i);
+          startAuto();
+        });
+      });
+
+      // Démarrage
+      const firstVid = slides[0].querySelector('video');
+      firstVid.play().catch(() => {});
+      startAuto();
+    })();
+
+    // --- Contact form ---
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('formSubmit');
+    const successMsg = document.getElementById('formSuccess');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Envoi en cours…';
+        await new Promise(r => setTimeout(r, 1200));
+        successMsg.style.display = 'block';
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Envoyer ma demande';
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    }
+
+    // --- Project cards ---
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', () => { window.location.href = 'realisations.html'; });
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'link');
+      card.setAttribute('aria-label', (card.querySelector('.project-name')?.textContent || '') + ' — voir les réalisations');
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.location.href = 'realisations.html'; }
+      });
+    });
+  </script>
+
 </body>
 </html>
